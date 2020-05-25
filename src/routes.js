@@ -1,21 +1,27 @@
-import SongsList from './components/SongsList';
-import SongsCreate from './components/SongsCreate';
-import SongsDetail from './components/SongsDetail';
+import App from './App';
+import Dashboard from './components/Dashboard';
+import Signup from './components/Signup';
+import Login from './components/Login';
 
 export default [
   {
     path: '/',
-    name: 'SongsList',
-    component: SongsList
+    name: 'App',
+    component: App
   },
   {
-    path: '/songs/new',
-    name: 'SongsCreate',
-    component: SongsCreate
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: Dashboard
   },
   {
-    path: '/songs/:id',
-    name: 'SongsDetail',
-    component: SongsDetail
+    path: '/signup',
+    name: 'Signup',
+    component: Signup
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
   }
 ];

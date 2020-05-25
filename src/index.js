@@ -3,12 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import ApolloClient from 'apollo-boost';
+import { ApolloClient } from 'apollo-client';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+import { createHttpLink } from "apollo-link-http";
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql',
+  link: new createHttpLink({
+    uri: 'http://localhost:4000/graphql',
+    credentials: 'include'
+  }),
   cache: new InMemoryCache({
     dataIdFromObject: o => o.id
   })

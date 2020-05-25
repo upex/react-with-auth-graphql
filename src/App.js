@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import Routes from './routes';
+import Appbar from './components/Appbar';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <Appbar />
         <Switch>
           {routes}
         </Switch>
